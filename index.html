@@ -7,139 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#F3F4EF;
-    --surface:#FFFFFF;
-    --ink:#20231F;
-    --ink-soft:#4B4F49;
-    --primary:#2F4F49;
-    --primary-soft:#7C9A93;
-    --accent:#B98A4E;
-    --line:#DEDBD0;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,.logotype{font-family:'Fraunces',serif;font-weight:500;letter-spacing:-0.01em;}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
-  a{color:inherit;text-decoration:none;}
-
-  /* Header */
-  header{
-    position:sticky;top:0;background:rgba(243,244,239,0.92);
-    backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:10;
-  }
-  .navbar{display:flex;align-items:center;justify-content:space-between;padding:20px 32px;max-width:1120px;margin:0 auto;}
-  .logotype{font-size:20px;color:var(--primary);}
-  .logotype span{color:var(--accent);}
-  nav ul{display:flex;list-style:none;gap:32px;font-size:14px;color:var(--ink-soft);}
-  nav a:hover{color:var(--primary);}
-  .btn{
-    display:inline-flex;align-items:center;gap:6px;
-    padding:11px 20px;border-radius:2px;font-size:14px;font-weight:500;
-    border:1px solid var(--primary);
-  }
-  .btn-primary{background:var(--primary);color:#fff;}
-  .btn-ghost{background:transparent;color:var(--primary);}
-
-  /* Hero */
-  .hero{padding:88px 0 96px;position:relative;overflow:hidden;}
-  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:64px;align-items:center;}
-  .eyebrow{
-    font-size:12px;letter-spacing:0.14em;text-transform:uppercase;
-    color:var(--accent);font-weight:600;margin-bottom:18px;
-  }
-  .hero h1{font-size:44px;line-height:1.15;color:var(--primary);margin-bottom:22px;}
-  .hero p.lead{font-size:17px;color:var(--ink-soft);max-width:440px;margin-bottom:32px;}
-  .hero-actions{display:flex;gap:14px;}
-  .hero-line{position:absolute;top:60px;left:-40px;width:600px;opacity:0.35;pointer-events:none;}
-  .hero-banner-img{
-    width:100%;height:420px;object-fit:cover;border-radius:4px;
-    display:block;margin-bottom:40px;
-  }
-  .hero-text{max-width:640px;margin:0 auto;text-align:center;}
-  .hero-text .lead{margin-left:auto;margin-right:auto;}
-  .hero-actions{justify-content:center;}
-
-  .photo-placeholder{
-    background:
-      repeating-linear-gradient(135deg, rgba(47,79,73,0.06) 0px, rgba(47,79,73,0.06) 1px, transparent 1px, transparent 14px),
-      var(--surface);
-    border:1px dashed var(--primary-soft);
-    border-radius:4px;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    color:var(--primary-soft);font-size:13px;text-align:center;gap:6px;
-  }
-  .photo-placeholder svg{width:28px;height:28px;opacity:0.6;}
-  .hero-photo{aspect-ratio:4/5;border-radius:4px;}
-
-  /* Sections */
-  section{padding:80px 0;}
-  .section-head{max-width:560px;margin-bottom:48px;}
-  .section-head .eyebrow{margin-bottom:12px;}
-  .section-head h2{font-size:30px;color:var(--primary);}
-  .section-head p{color:var(--ink-soft);margin-top:12px;font-size:15px;}
-
-  /* Leistungen */
-  .leistungen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .card{
-    background:var(--surface);border:1px solid var(--line);border-radius:4px;
-    padding:32px 28px;
-  }
-  .card .icon{
-    width:40px;height:40px;border-radius:50%;background:rgba(47,79,73,0.08);
-    display:flex;align-items:center;justify-content:center;margin-bottom:20px;
-  }
-  .card .icon svg{width:20px;height:20px;stroke:var(--primary);}
-  .card h3{font-size:18px;color:var(--ink);margin-bottom:10px;font-weight:500;}
-  .card p{font-size:14px;color:var(--ink-soft);}
-
-  /* Standorte */
-  .standorte{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .standort-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
-  .standort-card{background:var(--surface);padding:40px;}
-  .standort-card .eyebrow{margin-bottom:8px;}
-  .standort-card h3{font-size:22px;color:var(--primary);margin-bottom:16px;}
-  .standort-card .addr{font-size:14px;color:var(--ink-soft);margin-bottom:4px;}
-  .standort-card .btn{margin-top:24px;padding:9px 16px;font-size:13px;}
-
-  /* Team */
-  .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-  .team-card .photo-placeholder{aspect-ratio:1/1;border-radius:50%;margin-bottom:16px;}
-  .team-card h4{font-size:15px;font-weight:500;margin-bottom:2px;}
-  .team-card p{font-size:13px;color:var(--ink-soft);}
-
-  /* Blog */
-  .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .blog-card .photo-placeholder{aspect-ratio:16/10;margin-bottom:16px;}
-  .blog-card .date{font-size:12px;color:var(--accent);font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:8px;}
-  .blog-card h4{font-size:16px;font-weight:500;color:var(--ink);margin-bottom:8px;line-height:1.4;}
-  .blog-card p{font-size:14px;color:var(--ink-soft);}
-
-  /* Footer */
-  footer{background:var(--primary);color:#EDEFE9;padding:64px 0 32px;}
-  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
-  footer h5{font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;font-weight:600;}
-  footer .logotype{color:#fff;margin-bottom:14px;}
-  footer .logotype span{color:var(--accent);}
-  footer p.muted{color:#B9C6C2;font-size:14px;max-width:280px;}
-  footer ul{list-style:none;font-size:14px;color:#D6DED9;}
-  footer ul li{margin-bottom:10px;}
-  .footer-bottom{border-top:1px solid rgba(255,255,255,0.15);padding-top:24px;display:flex;justify-content:space-between;font-size:13px;color:#9FB1AB;}
-
-  @media (max-width:860px){
-    .hero-grid, .leistungen-grid, .team-grid, .blog-grid, .footer-grid{grid-template-columns:1fr;}
-    .standort-grid{grid-template-columns:1fr;}
-    nav{display:none;}
-    .hero h1{font-size:32px;}
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -148,7 +16,7 @@
     <div class="logotype">Schwanke-Lorenz <span>·</span> Physiotherapie</div>
     <nav>
       <ul>
-        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="leistungen.html">Leistungen</a></li>
         <li><a href="#ueber-uns">Über uns</a></li>
         <li><a href="#standorte">Standorte</a></li>
         <li><a href="#blog">Blog</a></li>
@@ -168,7 +36,7 @@
       <p class="lead">Manuelle Therapie, Myoreflextherapie und individuelle Physiotherapie — seit über 30 Jahren mit einem erfahrenen Team an zwei Standorten für Sie da.</p>
       <div class="hero-actions">
         <a href="#" class="btn btn-primary">Termin online buchen</a>
-        <a href="#leistungen" class="btn btn-ghost">Leistungen ansehen</a>
+        <a href="leistungen.html" class="btn btn-ghost">Leistungen ansehen</a>
       </div>
     </div>
   </div>
@@ -182,21 +50,24 @@
       <p>Drei Schwerpunkte, die auf Ihren individuellen Bedarf abgestimmt werden.</p>
     </div>
     <div class="leistungen-grid">
-      <div class="card">
+      <a class="card" href="leistungen.html#physiotherapie">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
         <h3>Physiotherapie</h3>
         <p>Von Kinesio-Taping über Faszienbehandlung bis Beckenbodentraining — individuell abgestimmte Behandlungskonzepte für Alltag und Sport.</p>
-      </div>
-      <div class="card">
+        <span class="more">Mehr erfahren →</span>
+      </a>
+      <a class="card" href="leistungen.html#manuelle-therapie">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg></div>
         <h3>Manuelle Therapie</h3>
         <p>Gezielte Handgriff- und Mobilisationstechniken lösen Blockaden und stellen das Zusammenspiel von Gelenken, Muskeln und Nerven wieder her.</p>
-      </div>
-      <div class="card">
+        <span class="more">Mehr erfahren →</span>
+      </a>
+      <a class="card" href="leistungen.html#myoreflextherapie">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 21s-7-4.35-9.5-8.5C.7 8.6 3 5 6.5 5c2 0 3.5 1.2 4.5 2.5C12 6.2 13.5 5 15.5 5 19 5 21.3 8.6 19.5 12.5 17 16.65 12 21 12 21z"/></svg></div>
         <h3>Myoreflextherapie</h3>
         <p>Ein ganzheitlicher Therapieansatz nach Dr. Kurt Mosetter, der körperliche und muskuläre Zusammenhänge über Reflexpunkte behandelt.</p>
-      </div>
+        <span class="more">Mehr erfahren →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -314,7 +185,7 @@
       <div>
         <h5>Navigation</h5>
         <ul>
-          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="leistungen.html">Leistungen</a></li>
           <li><a href="#ueber-uns">Über uns</a></li>
           <li><a href="#blog">Blog</a></li>
           <li><a href="#">Datenschutz</a></li>
