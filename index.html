@@ -59,6 +59,13 @@
   .hero p.lead{font-size:17px;color:var(--ink-soft);max-width:440px;margin-bottom:32px;}
   .hero-actions{display:flex;gap:14px;}
   .hero-line{position:absolute;top:60px;left:-40px;width:600px;opacity:0.35;pointer-events:none;}
+  .hero-banner-img{
+    width:100%;height:420px;object-fit:cover;border-radius:4px;
+    display:block;margin-bottom:40px;
+  }
+  .hero-text{max-width:640px;margin:0 auto;text-align:center;}
+  .hero-text .lead{margin-left:auto;margin-right:auto;}
+  .hero-actions{justify-content:center;}
 
   .photo-placeholder{
     background:
@@ -153,8 +160,9 @@
 </header>
 
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
+  <div class="wrap">
+    <img class="hero-banner-img" src="hero-banner.png" alt="Lichtdurchfluteter Behandlungsraum der Physiotherapie Schwanke-Lorenz">
+    <div class="hero-text">
       <div class="eyebrow">Physiotherapie · Freiburg &amp; Keltern-Weiler</div>
       <h1>Beweglichkeit, die man wieder spürt.</h1>
       <p class="lead">Manuelle Therapie, Myoreflextherapie und individuelle Physiotherapie — seit über 30 Jahren mit einem erfahrenen Team an zwei Standorten für Sie da.</p>
@@ -162,10 +170,6 @@
         <a href="#" class="btn btn-primary">Termin online buchen</a>
         <a href="#leistungen" class="btn btn-ghost">Leistungen ansehen</a>
       </div>
-    </div>
-    <div class="photo-placeholder hero-photo">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-      Ihr Foto: Behandlungsraum
     </div>
   </div>
 </section>
